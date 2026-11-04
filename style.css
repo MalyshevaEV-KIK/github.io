@@ -1,0 +1,189 @@
+/* Родовые переменные цвета для всего сайта */
+:root {
+    --primary-color: #0d47a1;  /* ЗАГОЛОВКИ: Насыщенный синий */
+    --text-color: #000000;     /* ОСНОВНОЙ ТЕКСТ: Черный */
+    --bg-color: #eef2f5;       /* ОБЩИЙ ФОН СТРАНИЦЫ: Серый */
+    --card-bg: #ffffff;        /* ФОН КАРТОЧЕК: Чистый белый */
+}
+
+/* Настройки для всей страницы */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Оформление шапки сайта */
+header {
+    background-color: var(--primary-color);
+    color: #ffffff; /* Текст в шапке делаем белым для контраста на синем */
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-bottom: 4px solid #0a3780;
+}
+
+header p {
+    color: #ffffff;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* Основной контейнер для контента */
+main {
+    max-width: 850px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    margin-bottom: 5rem;
+}
+
+/* Белые карточки разделов, которые лежат на сером фоне */
+section {
+    background: var(--card-bg);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Легкая тень */
+}
+
+/* Все главные заголовки делаем насыщенными синими */
+h2, h3 {
+    color: var(--primary-color);
+}
+
+h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+/* --- СТИЛИ ДЛЯ РАСКРЫВАЮЩИХСЯ ВКЛАДОК (ДИСЦИПЛИНЫ) --- */
+.discipline-accordion {
+    background: #f8f9fa; /* Вкладка в закрытом виде чуть сероватая */
+    border: 1px solid #e2e8f0;
+    margin-bottom: 0.8rem;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.discipline-accordion summary {
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color); /* Название предмета — синее */
+    cursor: pointer;
+    outline: none;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* Строгая синяя стрелочка справа */
+.discipline-accordion summary::after {
+    content: '▼';
+    position: absolute;
+    right: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: transform 0.2s;
+}
+
+.discipline-accordion[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.discipline-accordion summary:hover {
+    background-color: #edf2f7; /* Подсветка при наведении */
+}
+
+/* Контент внутри раскрытой дисциплины */
+.discipline-content {
+    padding: 1rem 1.5rem;
+    background: var(--card-bg);
+    border-top: 1px solid #e2e8f0;
+}
+
+/* --- СТИЛИ ДЛЯ ВЛОЖЕННЫХ СПЕЦИАЛЬНОСТЕЙ (ОХРАНА ТРУДА) --- */
+.spec-accordion {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+.spec-accordion summary {
+    padding: 0.7rem 1.2rem;
+    background-color: #f1f5f9;
+    font-size: 1rem;
+    color: var(--primary-color); /* Название специальности тоже синее */
+}
+
+.spec-content {
+    padding: 0.8rem 1.2rem;
+    background-color: var(--card-bg);
+}
+
+/* Строки с учебными материалами */
+.material-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.material-row:last-child {
+    border-bottom: none;
+}
+
+/* Черный основной текст для названий материалов */
+.material-row span {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Вложенные строчки (Задания, ПР №1, ПР №2) */
+.sub-task {
+    padding-left: 2rem;
+    background-color: #fafafa;
+    font-size: 0.95rem;
+}
+
+.nested-row {
+    border-bottom: none;
+}
+
+/* Аккуратные синие кнопки для скачивания */
+.btn-download-sm {
+    background-color: var(--primary-color);
+    color: #ffffff; /* Текст на кнопке белый */
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-download-sm:hover {
+    background-color: #0a3780; /* Кнопка темнеет при наведении */
+}
+
+/* Списки для портфолио и достижений */
+ul {
+    padding-left: 1.2rem;
+    color: var(--text-color);
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Строгий темный подвал */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
